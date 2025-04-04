@@ -1,0 +1,88 @@
+//Search
+<style>
+    #widget-gps {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        color: #FFF;
+    }
+
+    #widget-gps .box-wrapper {
+        background-color: #ffffff00;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #widget-gps img {
+        max-height: 80px;
+        margin-bottom: 10px;
+    }
+
+    #widget-gps .search input {
+        box-sizing: border-box;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 5px;
+        font-size: 16px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        width: calc(100% - 120px); /* Make the search bar longer */
+        color: rgb(82, 72, 72);
+    }
+
+    #widget-gps .search button {
+        box-sizing: border-box;
+        height: 35px;
+        width: 80px; /* Reduce button length */
+        background-color: #004A78;
+        color: #ffffff !important;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 480px) {
+        #widget-gps .search {
+            display: flex;
+            flex-direction: column; /* Stack input and button vertically */
+            align-items: center;
+        }
+
+        #widget-gps .search input {
+            font-size: 14px; /* Smaller font size for mobile */
+            height: 30px; /* Adjust height for mobile */
+            line-height: 30px;
+            width: 90%; /* Adjust width for mobile */
+            margin-bottom: 10px; /* Add spacing between input and button */
+        }
+
+        #widget-gps .search button {
+            height: 30px; /* Adjust button height for mobile */
+            width: 90%; /* Adjust button width for mobile */
+            font-size: 14px; /* Smaller font size for mobile */
+        }
+    }
+</style>
+
+<div id="widget-gps">
+    <div class="box-wrapper">
+        <img src="https://www.gbc.edu/wp-content/uploads/Goldey-Beacom-Library-Logo-e1743699507424.png" alt="Library Logo"> <br>
+        <img src="https://assets.gale.com/icons/gps-web.png">
+        
+        <form class="gtm-search search" action="//support.gale.com/widgets/search" method="get" target="_blank" rel="noopener">
+            <input type="text" class="gtm-search-term" name="q" placeholder="Search articles, books, journals & more" aria-label="Search Resource Database">
+            <input type="hidden" name="loc" value="wilm19808">
+            <input type="hidden" name="id" value="gps">
+            <button type="submit" aria-label="Search">Search</button>
+        </form>
+    </div>
+</div>

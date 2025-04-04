@@ -1,0 +1,196 @@
+<style>
+    #widget-gps {
+        box-sizing: border-box;
+        position: relative;
+        width: 720px;
+        height: 380px;
+        margin: 0 auto;
+        color: #FFF;
+    }
+
+    #widget-gps .blade {
+        position: absolute;
+        z-index: 2;
+        height: 27px;
+        width: 180px;
+        background-image: url("https://assets.gale.com/widgets/blade-gale.png");
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: contain;
+    }
+
+    #widget-gps .container {
+        position: absolute;
+        box-sizing: border-box;
+        top: 3px;
+        left: 3px;
+        background-size: cover;
+        background-position: center;
+        background-color: #18345f;
+        background-image: url("https://goldeybeacomcollege.sharepoint.com/:i:/r/teams/branding/Shared%20Documents/GBC%20Marketing%20Photo%20Library/_Archive%20-%20Sorting%20in%20Progress/used%20photos/DSCF2254-2.jpg?csf=1&web=1&e=NEH9qX");
+        background-repeat: no-repeat;
+        width: 700px;
+        height: 360px;
+    }
+
+    #widget-gps .container h1 {
+        position: absolute;
+        bottom: 32px;
+        box-sizing: border-box;
+        margin: 0 0 0 10px;
+        padding: 0;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 15px;
+        font-family: "open sans";
+        width: 90%;
+        color: #FFF;
+    }
+
+    #widget-gps .container h1 a {
+        color: black;
+        text-decoration: none;
+    }
+
+    #widget-gps .container form {
+        margin: 0;
+        padding: 0;
+    }
+
+    #widget-gps .box {
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 7px;
+        width: 100%;
+    }
+
+    #widget-gps .search input {
+        box-sizing: border-box;
+        float: left;
+        font-family: "open sans";
+        padding-left: 5px;
+        font-size: 12px;
+        height: 22px;
+        line-height: 22px;
+        border: none;
+        width: calc(100% - 120px); /* Make the search bar longer */
+        color: black;
+    }
+
+    #widget-gps .search button {
+        box-sizing: border-box;
+        height: 24px;
+        width: 80px; /* Reduce button length */
+        background-color: #004A78;
+        color: #ffffff !important;
+        font-family: "open sans";
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    #widget-gps .click {
+        box-sizing: border-box;
+        display: block;
+        padding-left: 5px;
+        height: 20px;
+        line-height: 20px;
+        color: #ffffff;
+        font-family: "open sans";
+        font-size: 12px;
+        background: #0085CA;
+        background-image: url("https://assets.gale.com/widgets/click.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        text-decoration: none;
+    }
+
+    #widget-gps .box-wrapper {
+        background-color: #ffffffc2;
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    right: 70px;
+    height: 90px;
+    width: 550px;
+    top: 40px;
+    }
+
+    img {
+        position: absolute;
+    align-content: center;
+    top: 8px;
+    max-height: 80px;
+    align-items: center;
+        align-items: center;
+    }
+
+    /* Buttons */
+    #widget-gps .link-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 5px; /* Reduced gap between buttons */
+        margin-top: 250px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #widget-gps .link-buttons a {
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-family: "open sans";
+        color: #ffffff;
+        background-color: #004A78;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center; /* Center text horizontally */
+        height: 40px; /* Set fixed height */
+        display: flex; /* Use flexbox for centering */
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+    }
+
+    #widget-gps .link-buttons a:hover {
+        background-color: #0085CA;
+        transform: translateY(-2px);
+    }
+</style>
+
+<div id="widget-gps">
+    <div class="blade"></div>
+    <div class="container">
+        <div class="box-wrapper">
+            <img src="https://www.gbc.edu/wp-content/uploads/Goldey-Beacom-Library-Logo-e1743699507424.png">
+            <!-- <h1>
+                <a class="gtm-click" data-id="" data-name="Power Search" data-loc="wilm19808" href="https://support.gale.com/widgets/search/?loc=wilm19808&amp;id=gps" target="_blank" rel="noopener">
+                    Gale Power Search
+                </a>
+            </h1> -->
+            <form class="gtm-search search" action="//support.gale.com/widgets/search" method="get" target="_blank" rel="noopener">
+                <input type="text" class="gtm-search-term" name="q" placeholder="Search Resource" aria-label="Search Resource Database">
+                <input type="hidden" name="loc" value="wilm19808">
+                <input type="hidden" name="id" value="gps">
+                <button type="submit" aria-label="Search">Search</button>
+            </form>
+        </div> <!--box-wrapper-->
+        <div class="link-buttons">
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38169757">Plan Your Visit</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38169352">Self-Service Help</a>
+            <a href="https://ezborrow.reshare.indexdata.com/">EZborrow</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40080523">Digital Collections</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38203520">Author Talks</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40078754">Digital Magazines</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079987">Newspapers</a>
+            <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079992">AI Tools</a>
+            <a href="https://gbc.libguides.com/fairuse_copyright">Copyright & Fair Use</a>
+        </div>
+    </div> <!--container-->        
+</div>
