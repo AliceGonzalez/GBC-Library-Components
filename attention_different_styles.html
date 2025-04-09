@@ -1,0 +1,180 @@
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    /* 1. Classic Card */
+    .card-section {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border-left: 5px solid #004A78;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-section h2 {
+      color: #004A78;
+      margin-bottom: 10px;
+    }
+
+    /* 2. Full Width Banner */
+    .banner-bookclub {
+      background-color: #004A78;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .banner-bookclub h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .banner-bookclub p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
+    /* 3. Quote Style */
+    .quote-style {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid #004A78;
+      border-radius: 6px;
+    }
+
+    .quote-style h2 {
+      color: #004A78;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .quote-style blockquote {
+      font-style: italic;
+      color: #333;
+      line-height: 1.6;
+      quotes: "“" "”";
+    }
+
+    .quote-style blockquote::before {
+      content: open-quote;
+    }
+
+    .quote-style blockquote::after {
+      content: close-quote;
+    }
+
+    /* 4. Minimal Box with Emoji */
+    .minimal-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 25px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    .minimal-box h2 {
+      color: #004A78;
+      font-size: 24px;
+    }
+
+    .minimal-box p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* 5. Icon Panel Style */
+    .icon-panel {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-left: 5px solid #004A78;
+      border-radius: 8px;
+    }
+
+    .icon-panel .icon-circle {
+      background-color: #004A78;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .icon-panel .text h2 {
+      margin-bottom: 8px;
+      color: #004A78;
+    }
+
+    .icon-panel .text p {
+      margin: 0;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .icon-panel {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+<body>
+
+    <!-- 1. Classic Card -->
+    <section class="card-section">
+      <h2>📚 Book Club</h2>
+      <p>Join our Book Club meetings by visiting our page. You can also look at past book club selections there as well.</p>
+    </section>
+  
+    <!-- 2. Full Width Banner -->
+    <section class="banner-bookclub">
+      <h2>Book Club</h2>
+      <p>Join our Book Club meetings by visiting our page. You can also look at past book club selections there as well.</p>
+    </section>
+  
+    <!-- 3. Quote Style -->
+    <section class="quote-style">
+      <h2><i class="fas fa-book-reader"></i> Book Club</h2>
+      <blockquote>
+        Join our Book Club meetings by visiting our page. You can also look at past book club selections there as well.
+      </blockquote>
+    </section>
+  
+    <!-- 4. Minimal Box -->
+    <section class="minimal-box">
+      <h2>📖 Book Club</h2>
+      <p>Join our Book Club meetings by visiting our page. You can also look at past book club selections there as well.</p>
+    </section>
+  
+    <!-- 5. Icon Panel -->
+    <section class="icon-panel">
+      <div class="icon-circle"><i class="fas fa-book-open"></i></div>
+      <div class="text">
+        <h2>Book Club</h2>
+        <p>Join our Book Club meetings by visiting our page. You can also look at past book club selections there as well.</p>
+      </div>
+    </section>
+  
+  </body>

@@ -1,0 +1,153 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    height: 75px;
+  }
+
+  .hours {
+    font-size: 12px;
+    color: #555555;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .hours strong {
+    color: #004A78;
+    font-weight: bold;
+  }
+
+  nav {
+    background-color: #004A78;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav > div {
+    position: relative;
+  }
+
+  nav a {
+    display: block;
+    padding: 15px 20px;
+    color: white !important;
+    text-decoration: none;
+  }
+
+  nav > div:hover {
+    background-color: #265a7a;
+    color: white;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: #265a7a;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .dropdown-content a {
+    padding: 10px 15px;
+  }
+
+  nav > div:hover .dropdown-content {
+    display: block;
+  }
+
+  .menu-icon, .menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .hours {
+      text-align: left;
+    }
+  }
+  .header-line {
+    background-color: #E9A714;
+    padding: 3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://www.gbc.edu/wp-content/uploads/Goldey-Beacom-e1744117365639.png" alt="College Logo" class="logo" />
+  <div class="hours">
+    <strong>Library Hours</strong><br />
+    Mon–Sun: 8am – Midnigth<br />
+    <strong>Research Support</strong><br />
+    Mon-Fri: 8am – 5pm<br />
+    Sat-Sun: By Appointment
+  </div>
+</header>
+<div class="header-line"></div>
+<nav>
+  <div tabindex="0">
+    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079992">AI Tools</a>
+  </div>
+  <div tabindex="0">
+    <a href="#">Collections</a>
+    <div class="dropdown-content">
+      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40080523">Featured</a>
+      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40078754">Magazine</a>
+    </div>
+  </div>
+  <div tabindex="0">
+    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079987">Newspapers</a>
+    <!-- <div class="dropdown-content">
+      <a href="#">Wall Street</a>
+      <a href="#">NY Times</a>
+      <a href="#">The Chronicle of Higher Education</a>
+      <a href="#">Bay to Bay News</a>
+      <a href="#">Cape Gazette</a>
+    </div> -->
+  </div>
+  <div tabindex="0">
+    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38203520">Events</a>
+  </div>
+  <div tabindex="0">
+    <a href="https://ezborrow.reshare.indexdata.com/">EZborrow</a>
+  </div>
+  <div tabindex="0">
+    <a href="https://gbc.libguides.com/fairuse_copyright">Copyright & Fair Use</a>
+  </div>
+  <div tabindex="0">
+    <a href="#">Help</a>
+    <div class="dropdown-content">
+      <a href="#">Ask Us</a>
+      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38169352">Self-Service</a>
+      <a href="#">By Topic</a>
+    </div>
+  </div>
+</nav>
