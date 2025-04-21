@@ -1,153 +1,330 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GBC Header</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+  <style>
+/*_______GBC HEADER & NAVBAR CODE_______*/
+
+#s-lib-footer-public {
+  display: none;
+} 
+
+.gbc-header-container {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  position: relative; 
+  z-index: 1; 
+}
+
+.gbc-header-alert {
+  background-color: #e9a61479;
+  color: #004A78;
+  text-align: center;
+  padding: 3px 12px;
+  font-weight: bold;
+}
+
+.gbc-header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  position: relative; 
+  z-index: 1;
+}
+
+.gbc-header-logo {
+  height: 100px;
+}
+
+.gbc-header-hours {
+  font-size: 16px;
+  color: #555555;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.gbc-header-hours strong {
+  color: #004A78;
+  font-weight: bold;
+}
+
+.gbc-header-line {
+  background-color: #E9A714;
+  padding: 3px;
+}
+
+/* NAVIGATION BASE STYLES */
+.gbc-nav {
+  background-color: #004A78;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.gbc-nav-section {
+  position: relative;
+}
+
+.gbc-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px;
+  color: white !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gbc-nav-link i {
+  transition: transform 0.3s ease;
+}
+
+.gbc-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #265a7a;
+  color: white;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.gbc-dropdown a {
+  padding: 10px 15px;
+  display: block;
+  color: white !important;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.gbc-dropdown a:hover {
+  background-color: #004A78; 
+  transform: translateX(5px); 
+}
+
+/* Hover for desktop */
+@media (min-width: 769px) {
+  .gbc-nav-section:hover .gbc-dropdown {
+    display: block;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+  .gbc-nav-section:hover {
+    background-color: #265a7a;
   }
 
-  header {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
+  .gbc-nav-section:hover .gbc-nav-link i {
+    transform: scale(1.2);
+  }
+}
+@media (min-width: 769px) {
+  /* Hide mobile-only checkboxes on desktop */
+  .dropdown-toggle {
+    display: none !important;
+  }
+
+  /* Make sure labels act like links again (disable mobile-only label-click logic) */
+  .gbc-nav-link {
+    pointer-events: auto;
+  }
+}
+
+
+/* Hamburger Menu */
+.gbc-menu-toggle {
+  display: none;
+}
+
+.gbc-hamburger {
+  display: none;
+  background-color: #004A78;
+  color: white;
+  font-size: 20px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.gbc-hamburger i {
+  margin-right: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .gbc-header {
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .logo {
-    height: 75px;
+  .gbc-header-hours {
+    text-align: center;
   }
 
-  .hours {
-    font-size: 12px;
-    color: #555555;
-    text-align: right;
-    line-height: 1.5;
+  .gbc-header-alert {
+    font-size: 14px;
+    padding: 5px 10px;
   }
 
-  .hours strong {
-    color: #004A78;
-    font-weight: bold;
+  .gbc-hamburger {
+    display: block;
   }
 
-  nav {
-    background-color: #004A78;
+  .gbc-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gbc-menu-toggle:checked + label + .gbc-nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
-  nav > div {
-    position: relative;
+  .gbc-nav-section {
+    width: 100%;
   }
 
-  nav a {
-    display: block;
+  .gbc-nav-link {
+    width: 100%;
+    justify-content: flex-start;
     padding: 15px 20px;
-    color: white !important;
-    text-decoration: none;
   }
 
-  nav > div:hover {
-    background-color: #265a7a;
-    color: white;
-  }
-
-  .dropdown-content {
+  /* Checkbox dropdown toggles */
+  .dropdown-toggle {
     display: none;
-    position: absolute;
-    color: white;
-    background-color: #265a7a;
-    min-width: 200px;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
   }
 
-  .dropdown-content a {
-    padding: 10px 15px;
-  }
-
-  nav > div:hover .dropdown-content {
+  .dropdown-toggle:checked + .gbc-nav-link + .gbc-dropdown {
     display: block;
+    position: relative;
+    box-shadow: none;
+    padding-left: 20px;
   }
 
-  .menu-icon, .menu-toggle {
+  .gbc-dropdown {
+    position: relative;
     display: none;
+    background-color: #265a7a;
   }
+}
 
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
+.hours-line {
+  text-decoration: underline;
+}
 
-    .hours {
-      text-align: left;
-    }
-  }
-  .header-line {
-    background-color: #E9A714;
-    padding: 3px;
-  }
-</style>
+body, html {
+  overflow: visible; 
+}
+  </style>
 </head>
-<body>
 
-<header>
-  <img src="https://www.gbc.edu/wp-content/uploads/Goldey-Beacom-e1744117365639.png" alt="College Logo" class="logo" />
-  <div class="hours">
-    <strong>Library Hours</strong><br />
-    Mon–Sun: 8am – Midnigth<br />
-    <strong>Research Support</strong><br />
-    Mon-Fri: 8am – 5pm<br />
-    Sat-Sun: By Appointment
-  </div>
-</header>
-<div class="header-line"></div>
-<nav>
-  <div tabindex="0">
-    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079992">AI Tools</a>
-  </div>
-  <div tabindex="0">
-    <a href="#">Collections</a>
-    <div class="dropdown-content">
-      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40080523">Featured</a>
-      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40078754">Magazine</a>
+
+  <div class="gbc-header-container">
+    <div class="gbc-header-alert">
+      📣 Welcome to GBC Library! Explore our new Accessibility Tool designed to enhance your experience.
     </div>
+
+    <header class="gbc-header">
+      <img src="https://www.gbc.edu/wp-content/uploads/Goldey-Beacom-e1744117365639.png" alt="College Logo" class="gbc-header-logo" />
+      <div class="gbc-header-hours">
+        <strong class="hours-line">Library Hours</strong><br />
+        <strong>Mon–Sun:</strong> 8am – Midnight<br />
+        <strong class="hours-line">Research Support</strong><br />
+        <strong>Mon–Fri:</strong> 8am – 5pm<br />
+        <strong>Sat–Sun:</strong> By Appointment
+      </div>
+    </header>
+
+    <div class="gbc-header-line"></div>
+
+    <!-- Hamburger menu toggle -->
+    <input type="checkbox" id="menu-toggle" class="gbc-menu-toggle" />
+    <label for="menu-toggle" class="gbc-hamburger">
+      <i class="fas fa-bars"></i> Menu
+    </label>
+
+    <!-- NAVIGATION -->
+    <nav class="gbc-nav">
+      <!-- Academic Support -->
+      <div class="gbc-nav-section">
+        <input type="checkbox" id="dropdown1" class="dropdown-toggle" />
+        <label for="dropdown1" class="gbc-nav-link"><i class="fas fa-book"></i> Academic Support</label>
+        <div class="gbc-dropdown">
+          <a href="https://gbc.libguides.com/apastyle">Citations</a>
+          <a href="https://gbc.libguides.com/copyright">Copyright</a>
+          <a href="https://gbc.libguides.com/er.php?b=c">Course Reserves</a>
+          <a href="https://www.joinknack.com/student/goldey-beacom-college">Peer Tutoring</a>
+          <a href="https://gbc.libapps.com/libguides/admin_c.php?g=1394169">Tutorials</a>
+        </div>
+      </div>
+
+      <!-- Digital Collections -->
+      <div class="gbc-nav-section">
+        <input type="checkbox" id="dropdown2" class="dropdown-toggle" />
+        <label for="dropdown2" class="gbc-nav-link"><i class="fas fa-folder"></i> Digital Collections</label>
+        <div class="gbc-dropdown">
+          <a href="https://goldey-beacom.quartexcollections.com/">All Collections</a>
+          <a href="https://goldey-beacom.quartexcollections.com/student-portfolios">Student Portfolios</a>
+          <a href="https://goldey-beacom.quartexcollections.com/yearbooks_collegehistory">Yearbooks</a>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="gbc-nav-section">
+        <input type="checkbox" id="dropdown3" class="dropdown-toggle" />
+        <label for="dropdown3" class="gbc-nav-link"><i class="fas fa-newspaper"></i> Events</label>
+        <div class="gbc-dropdown">
+          <a href="https://libraryc.org/gbclibrary">Author Talks</a>
+        </div>
+      </div>
+
+      <!-- Research Resources -->
+      <div class="gbc-nav-section">
+        <input type="checkbox" id="dropdown4" class="dropdown-toggle" />
+        <label for="dropdown4" class="gbc-nav-link"><i class="fas fa-robot"></i> Research Resources</label>
+        <div class="gbc-dropdown">
+          <a href="https://ezborrow.reshare.indexdata.com/">EZborrow</a>
+          <a href="https://gbc.bywatersolutions.com/cgi-bin/koha/opac-main.pl">Library Catalog</a>
+          <a href="https://gbc.libguides.com/c.php?g=1392601&p=10300566#s-lg-box-wrapper-40079987">Gamma</a>
+          <a href="https://goldey-beacom.quartexcollections.com/institutional-repository">Institutional Repository</a>
+          <a href="https://gbc.libguides.com/az/databases?preview=2bb691dcf6d992912835ca2905b417f7">Library Databases</a>
+          <a href="https://login.ebsco.com/?requestIdentifier=f251e3cf-8574-4a85-a0f2-257470a2464d&acrValues=uid&ui_locales&redirect_uri=https://logon.ebsco.zone/api/dispatcher/continue/prompted?state=MzU1OTZiMzMxMDgzNGU2ZjliMmEzYWJjYjc4NDU2YmI=&authRequest=eyJraWQiOiIxNjg2MTQ5MjEzNjMxIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczpcL1wvYXV0aC5lYnNjby56b25lXC9hcGlcL2Rpc3BhdGNoZXIiLCJhdXRoUmVxdWVzdCI6eyJsb2dpbl9oaW50IjpudWxsLCJEaXNwYXRjaGVyX0luc3RpdHV0aW9uYWwiOiI3NmI4NjFkZS01OWM1LTRhYWUtOGViNi01ZWIyMmMzNGRkZDAiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIGFmZmlsaWF0aW9uIHJvbGUgb3JnX2luZm8gb2ZmbGluZV9hY2Nlc3MgaW5pdGlhbF9yZWZlcnJlciIsImFjcl92YWx1ZXMiOiJ1aWQiLCJyZXNwb25zZV90eXBlIjoiY29kZSIsInN0YXRlIjoidERJQlduaDhEcEpMRXdKZWd6QWpoLVQxVllCdm9XMG1QY0xpS0l2MVVibz0iLCJyZWRpcmVjdF91cmkiOiJodHRwczpcL1wvZmxpcHN0ZXIuZWJzY28uY29tXC9vaWRjXC9jYWxsYmFjayIsIm5vbmNlIjoiMjJIODhHMWhISGJnUXkydkhaTkdjRXBOdFJmV1lBSk5jbWJ4LWlkUmowOCIsInByb21wdCI6ImxvZ2luIiwiY2xpZW50X2lkIjoiakFWcUFWR1NxNjFYWmxWYURMbTVhTzViMFc2Y1FEb1MiLCJyZXNwb25zZV9tb2RlIjoicXVlcnkifSwiaWF0IjoxNzQ0ODExMzA3LCJqdGkiOiJjZmMyNzA0MS1jMmI4LTRjNTQtODBhZi05MTFmZTIyMjU0NGIiLCJyZXFJZCI6ImYyNTFlM2NmLTg1NzQtNGE4NS1hMGYyLTI1NzQ3MGEyNDY0ZCJ9.Kb6lou0xW5_EpCtXDIBgBhG4HRmVPGNTqZ-uyZbKB82YFuzqSzTy39o83yFKVoIdtHyhoJbdQASyM8A1J8wTuH7CAd81Lt92N4BdAD6nPbLsic7FtMdsTasrw68X9LYwnhWanakK4ptynvv5FPV03iAUK74F5dj2SWhP-c7YIGV4lTih40UN6ir8nWZqZGjAn4Gqte7B945DdkNq88MXv_t9WJYZH7W-fgi4HpePUEsVsBEUks56wmpSlN_iaPhq8IaH_ydi7oyqNsWirDcDjoWCv-TtvZ1d3lQQqeMpqVGDv5WTGsOBgmUFmImuBfTaBjd-N_VKbM3IdwPHX3-l-w">Magazines</a>
+          <a href="https://gbc.libguides.com/c.php?g=1392601&p=10300566#s-lg-box-wrapper-40079987">News</a>
+          <a href="https://gbc.libguides.com/c.php?g=1392601&p=10300566#s-lg-box-wrapper-40078754">Grammarly</a>
+          <a href="https://goldey-beacom.quartexcollections.com/lightning-studio">Lightning Studio</a>
+          <a href="https://gbc.libguides.com/c.php?g=1392601&p=10300566#s-lg-box-wrapper-40079987">Litmaps</a>
+          <a href="https://www.scholarcy.com/">Scholarcy</a>
+        </div>
+      </div>
+
+      <!-- Help -->
+      <div class="gbc-nav-section">
+        <input type="checkbox" id="dropdown5" class="dropdown-toggle" />
+        <label for="dropdown5" class="gbc-nav-link"><i class="fas fa-question-circle"></i> Help</label>
+        <div class="gbc-dropdown">
+          <a href="https://gbc.libguides.com/c.php?g=1392601&p=10300566#s-lg-box-wrapper-40102697">Help by Topic</a>
+        </div>
+      </div>
+    </nav>
   </div>
-  <div tabindex="0">
-    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-40079987">Newspapers</a>
-    <!-- <div class="dropdown-content">
-      <a href="#">Wall Street</a>
-      <a href="#">NY Times</a>
-      <a href="#">The Chronicle of Higher Education</a>
-      <a href="#">Bay to Bay News</a>
-      <a href="#">Cape Gazette</a>
-    </div> -->
-  </div>
-  <div tabindex="0">
-    <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38203520">Events</a>
-  </div>
-  <div tabindex="0">
-    <a href="https://ezborrow.reshare.indexdata.com/">EZborrow</a>
-  </div>
-  <div tabindex="0">
-    <a href="https://gbc.libguides.com/fairuse_copyright">Copyright & Fair Use</a>
-  </div>
-  <div tabindex="0">
-    <a href="#">Help</a>
-    <div class="dropdown-content">
-      <a href="#">Ask Us</a>
-      <a href="https://gbc.libguides.com/c.php?g=1392601&amp;p=10300566#s-lg-box-wrapper-38169352">Self-Service</a>
-      <a href="#">By Topic</a>
-    </div>
-  </div>
-</nav>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale = 1.0,  
+maximum-scale=1.0, user-scalable=no" /> 

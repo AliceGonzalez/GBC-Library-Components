@@ -1,0 +1,127 @@
+<style type="text/css">.ai-tools {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.ai-tools h2 {
+  font-size: 2rem;
+  color: #003359;
+  margin-bottom: 2rem;
+}
+
+.ai-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ai-card-link {
+  text-decoration: none;
+}
+
+.ai-card {
+  background-color: white;
+  border: 1px solid #D2D7D2;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: block;
+  text-align: center;
+}
+
+.ai-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ai-card img {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.ai-card p {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
+  color: #004A78;
+}
+
+/* Mobile view optimization */
+@media (max-width: 600px) {
+  .ai-tools {
+    padding: 2rem 1rem;
+  }
+
+  .ai-tools h2 {
+    font-size: 1.5rem;
+  }
+
+  .ai-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
+    gap: 1rem;
+  }
+
+  .ai-card {
+    padding: 0.75rem;
+  }
+
+  .ai-card p {
+    font-size: 0.95rem;
+  }
+
+  .ai-card img {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ai-card-grid {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+  }
+}
+@media (max-width: 600px) {
+.ai-card img {
+  display: none;
+}
+.ai-card p {
+  color: white;
+  font-size: 2rem;
+}
+.ai-card a {
+  color: white;
+
+}
+.ai-card {
+    background-color: #004A78;
+  }
+
+}
+</style>
+<section class="ai-tools">
+<div class="ai-card-grid">
+<div class="ai-card" title="Gamma"><a class="ai-card-link" href="https://gamma.app/" target="_blank"><img alt="Gamma Logo" loading="lazy" src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431640/images/gamma.jpg" /> </a>
+<p><a class="ai-card-link" href="https://gamma.app/" target="_blank">Gamma</a></p>
+<a class="ai-card-link" href="https://gamma.app/" target="_blank"> </a></div>
+
+<div class="ai-card" title="Grammarly"><a class="ai-card-link" href="https://sso.grammarly.com/saml/login?ssoId=e9bbb12c-b8ac-487d-9da8-cd3c7272d483" target="_blank"><img alt="Grammarly Logo" loading="lazy" src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431640/images/grammarly.png" /> </a>
+
+<p><a class="ai-card-link" href="https://app.grammarly.com/" target="_blank">Grammarly</a></p>
+<a class="ai-card-link" href="https://app.grammarly.com/" target="_blank"> </a></div>
+
+<div class="ai-card" title="Litmaps"><a class="ai-card-link" href="https://app.litmaps.com/" target="_blank"><img alt="Litmaps Logo" loading="lazy" src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431640/images/Litmaps.jpg" /> </a>
+
+<p><a class="ai-card-link" href="https://app.litmaps.com/" target="_blank">Litmaps</a></p>
+<a class="ai-card-link" href="https://app.litmaps.com/" target="_blank"> </a></div>
+
+<div class="ai-card" title="Scholarcy"><a class="ai-card-link" href="https://www.scholarcy.com/" target="_blank"><img alt="Scholarcy Logo" loading="lazy" src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431640/images/scholarcy.jpg" /> </a>
+
+<p><a class="ai-card-link" href="https://www.scholarcy.com/" target="_blank">Scholarcy</a></p>
+<a class="ai-card-link" href="https://www.scholarcy.com/" target="_blank"> </a></div>
+</div>
+</section>

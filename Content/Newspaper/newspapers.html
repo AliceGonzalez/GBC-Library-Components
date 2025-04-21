@@ -1,0 +1,110 @@
+<style>
+  .newspaper-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .card {
+    flex: 1 1 calc(20% - 1.2rem); /* 5 cards evenly spaced */
+    aspect-ratio: 3 / 5;
+    background: linear-gradient(rgba(0, 75, 121, 0.541), rgba(0, 75, 121, 0.541)),
+      url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431640/images/Newspaper1.png') center/cover no-repeat;
+    border: 1px solid #D2D7D2;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    min-width: 150px;
+    height: 200px;
+  }
+
+  .card h4 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card a {
+    background-color: #E9A714;
+    color: #004A78;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+    font-size: 1.20rem;
+  }
+
+  .card a:hover {
+    background-color: #ffc72c;
+  }
+
+  @media (max-width: 900px) {
+    .card {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+
+@media (max-width: 600px) {
+.card {
+  flex: 1 1 100%;
+  height: auto; /* Let content define height */
+  aspect-ratio: auto; /* Cancel fixed ratio */
+  padding: 1rem;
+}
+
+.card h4 {
+  font-size: 1.5rem;
+}
+
+.card a {
+  font-size: 1rem;
+  padding: 8px 12px;
+}
+}
+.card {
+padding: 0.75rem;
+}
+
+</style>
+
+<section>
+  <div class="newspaper-cards">
+    <div class="card">
+      <h4>Wall Street Journal</h4>
+      <a href="https://www.wsj.com/">Read More</a>
+    </div>
+    <div class="card">
+      <h4>NY Times</h4>
+      <a href="https://www.nytimes.com/">Read More</a>
+    </div>
+    <div class="card">
+      <h4>The Chronicle of Higher Education</h4>
+      <a href="https://login.openathens.net/saml/2/sso/_/c/proxy.openathens.net?SAMLRequest=jZLNbtswEIRfheBd4o9kSyYsB26MogbS1oiVHHIpKGoTE5BJlUul8dtXtmMgAdKg992ZwXwzv3rZd%2BQZAlrvKipSTgk441vrnip6V39NSkowatfqzjuoqPP0ajFHve96tRzizt3C7wEwkiUihDiqXHuHwx7CFsKzNXB3e1PRXYw9KsY6%2F2Rd2gf%2Fckh9D07HHThMHUR2lGSSaYNsUraFfMyypBGzNskzPU3KVmYJ17MMpoKXUmSUrEZXOyqcgr83%2BFga0bNfzLCP7ClZryqqDS9mRZ41TVHm%2BaMpJ00J%2BZTL1kx1CWK8Qhxg7Y6NxIpKLicJzxPBa1EoKdQkTyXPHyjZBB%2B98d0X685VDsEpr9GicnoPqKJR2%2BX3GyVTrprzEapvdb1JNj%2B3NSX3FyTyiGSE5FCdWv9cqn%2F1pWdG6pQ3vPn%2F%2FF1fINLFpdF%2FwwIXbTz8F605e5PmMp8fo%2F16tfGdNQey7Dr%2F5zqAjuPIBGWL88v7kS3%2BAg%3D%3D&RelayState=https%3A%2F%2Fwww-chronicle-com.proxy.openathens.net%2F">Read More</a>
+    </div>
+    <div class="card">
+      <h4>Bay to Bay News</h4>
+      <a href="https://login.openathens.net/saml/2/sso/_/c/proxy.openathens.net?SAMLRequest=jZLBbtswEER%2FheBdIsVQSUxYDtwYRQ2krRErPfRSrOhVTEAmVS6Vxn9f2Y6BBEiD3vawO7OYN9Ob513HnjCSC77iRS45Q2%2FDxvnHij%2FUn7NrziiB30AXPFbcB34zmxLsut7Mh7T19%2Fh7QEpsToQxjSq3wdOww7jG%2BOQsPtzfVXybUk9GiC48Op%2F3MTzv89Cjh7RFT7nHJA6SQgmwJEAqKUvdZrBpm0xPcJxaBRlKKGVb2gbbDWeL0dWNCsfH3xq8L00UxC9hxXv2nC0XFQdZ2klTXEpdgG4uWoDLogR9cV0oLSe6GbeIBlz6QyKp4kqqMpM6K2RdXBmljJzkV7r8ydkqhhRs6D45f4pyiN4EIEfGww7JJGvW8693RuXSNKclMl%2FqepWtvq9rzn6ckagDkhGSJ3NM%2FWOp%2FsWXnxiZ47%2Fx1f3H53CGyGfnRP8NC31yaf9ftKbi1Tfn%2Bnwb7ZeLVeic3bN514U%2FtxEhjSUruJidTt6WbPYX&RelayState=https%3A%2F%2Fbaytobaynews-com.proxy.openathens.net">Read More</a>
+    </div>
+    <div class="card">
+      <h4>Cape Gazette</h4>
+      <a href="https://www-capegazette-com.eu1.proxy.openathens.net/">Read More</a>
+    </div>
+  </div>
+</section>
